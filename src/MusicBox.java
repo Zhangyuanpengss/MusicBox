@@ -1,5 +1,5 @@
 
-public class MusicBox {
+public class MusicBox{
 
     // Variables
     private String songID;
@@ -17,7 +17,11 @@ public class MusicBox {
         this.songID = songID;
         this.isSongPremium = premiumSong;
         this.songArtists = artists;
-        
+        this.songTitle = title;
+        this.songAlbum = Album;
+        this.songGenre = genre;
+        this.songProducer = producer;
+        this.songMusicLabel = label;
         // -- TODO
         /* Initialise  the rest of the variables in this Constructor block*/
     }
@@ -36,34 +40,41 @@ public class MusicBox {
         return isSongPremium;
     }
 
+    public String songTitle() {
+        return songTitle;
+    }
+    
+    public String songAlbum() {
+        return songAlbum;
+    }
 
+    public String songGenre() {
+        return songGenre;
+    }
+
+    public String songProducer() {
+        return songProducer;
+    }
+
+    public String songMusicLabel() {
+        return songMusicLabel;
+    }
     // -- TODO
         /* Create the rest of "getters" for the remaining variables */
     
-        public void playSong(String songID, char premium, int ads) {
-            switch(premium){
-                case 'Y':
-                System.out.println("This is a premium song. Please buy it to play without the ads");
-                playAd(ads, premium);
-                break;
-                case 'N':
-                System.out.println("Thank you for choosing this song. Hope you enjoy listening to it.");
-                playAd(ads, premium);
-                break;
-            }
-        }
     
-        private void playAd(int ads, char premium) {
-            if (ads == 1) {
-                System.out.println("Playing Ad 1");
-            }
-            else {
-                for(int i=1; i<=ads; i++){
-                    System.out.println("Playing Ad " + i);
-                }
-            }
-            
+
+    private void playAd(int ads, char premium) {
+        if (ads == 1) {
+            System.out.println("Playing Ad 1");
         }
+        else {
+            for(int i=1; i<=ads; i++){
+                System.out.println("Playing Ad " + i);
+            }
+        }
+        
+    }
     
 }
 
